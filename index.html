@@ -41,7 +41,7 @@ body{font-family:system-ui,Helvetica;background:linear-gradient(135deg,#0f2027,#
 <div class="msg ai">你好！我是豆包大模型，请问想了解什么招生信息？</div>
 <div class="typing" id="typing"><span></span><span></span><span></span></div>
 </div>
-<form id="form">
+<form id="form">
 <input id="inp" maxlength="200" placeholder="输入问题，回车发送">
 <button id="btn">发送</button>
 </form>
@@ -53,7 +53,7 @@ const form = document.getElementById('form');
 const input = document.getElementById('inp');
 const typing = document.getElementById('typing');
 
-form.addEventListener('submit', async (e)=>{
+form.addEventListener('submit', async(e)=>{
 e.preventDefault();
 const text = input.value.trim();
 if(!text) return;
@@ -76,7 +76,7 @@ function showTyping(on){ typing.style.display = on ? 'block' : 'none'; }
 
 /* 核心：调用后端云函数*/
 async function callDoubao(user){
-const res = await fetch('./.netlify/functions/doubao',{
+const res = await fetch('/netlify/fuctions/doubao',{
 method: 'POST',
 headers:{'Content-Type':'application/json'},
 body: JSON.stringify({user})
