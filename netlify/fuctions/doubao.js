@@ -33,5 +33,14 @@ return new Response(JSON.stringify({error:err}),{status:500});
 
 const data=await response.json();
 const reply=data.choices[0].message.content;
-return Response.json({reply });
+ // 添加 CORS 头部配置
+return new Response(JSON.stringify(reply), {
+    status: 200,
+    headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+    }
+});
 };
+return Response.json({reply});
