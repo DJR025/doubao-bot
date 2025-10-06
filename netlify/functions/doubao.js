@@ -15,7 +15,7 @@ const payload = {
     model:modelId,
     messages:[
         {role:'system',content:'你是人工智能助手.'},
-        {role:'user',content:'你好'}
+        {role:'user',content:user}
     ],
     temperature:0.7,
     stream: false
