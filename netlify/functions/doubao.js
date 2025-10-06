@@ -2,8 +2,8 @@ export default async (req) => {
 if(req.method!=='POST')return new Response('Method Not Allowed', { status: 405 });
 
 // 取环境变量
-const apiKey=Netlify.env.get('8e832763-985f-406d-ad57-1bca00db9f0d');// 在 Netlify 控制台填
-const modelId=Netlify.env.get('doubao-1-5-pro-32k-250115');// ep-2024xxxxxxxx
+const apiKey=Netlify.env.get('ARK_API_KEY');// 在 Netlify 控制台填
+const modelId=Netlify.env.get('ARK_MODEL_ID');// ep-2024xxxxxxxx
 
 if (!apiKey || !modelId) {
     return new Response(JSON.stringify({ error: 'Missing ARK_API_KEY or ARK_MODEL_ID' }), { status: 500 });
