@@ -76,7 +76,7 @@ function showTyping(on){ typing.style.display = on ? 'block' : 'none'; }
 
 /* 核心：调用后端云函数*/
 async function callDoubao(user){
-const res = await fetch('/netlify/functions/doubao',{
+const res = await fetch('/.netlify/functions/doubao',{
 method: 'POST',
 headers:{'Content-Type':'application/json'},
 body: JSON.stringify({user})

@@ -36,6 +36,7 @@ return new Response(JSON.stringify({error:err}),{status:500});
 
 const data=await response.json();
 const reply = data.choices?.[0]?.message?.content ?? '无返回内容';
+console.log('=== reply ===>',reply);
  // 添加 CORS 头部配置
 return new Response(JSON.stringify({ reply }), {
     status: 200,
